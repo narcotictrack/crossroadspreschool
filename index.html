@@ -43,6 +43,214 @@
     .feature-card:hover { transform: translateY(-5px); }
     .feature-icon { font-size:3rem; margin-bottom:1rem; }
     .feature-card h3 { color:#17a2b8; margin-bottom:.75rem; }
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CrossRoads Preschool - Hebron, KY</title>
+
+  <!-- Shared CSS + page-only styles -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    /* --- Page-only styles for hero, cards, and Quick Links tile --- */
+
+    .hero {
+      background: linear-gradient(rgba(23,162,184,.85), rgba(19,132,150,.85)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2387CEEB" width="1200" height="600"/><path fill="%2390EE90" d="M0 400 Q 300 350 600 400 T 1200 400 L 1200 600 L 0 600 Z"/><path fill="%2376C776" d="M0 450 Q 300 420 600 450 T 1200 450 L 1200 600 L 0 600 Z"/></svg>');
+      background-size: cover; background-position: center;
+      color: #fff; text-align: center; padding: 6rem 2rem;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,.3); }
+    .hero p { font-size: 1.25rem; margin-bottom: 2rem; text-shadow: 1px 1px 2px rgba(0,0,0,.3); }
+    .cta-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn { padding:.875rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; transition:all .3s; display:inline-block; box-shadow:0 4px 6px rgba(0,0,0,.2); }
+    .btn-primary { background:#fff; color:#17a2b8; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,.3); }
+    .btn-secondary { background:transparent; color:#fff; border:2px solid #fff; }
+    .btn-secondary:hover { background:#fff; color:#17a2b8; }
+
+    .container { max-width:1200px; margin:0 auto; padding:4rem 1rem; }
+    .section-header { text-align:center; margin-bottom:3rem; }
+    .section-header h2 { font-size:2.25rem; color:#17a2b8; margin-bottom:.5rem; }
+    .section-header p { font-size:1.1rem; color:#666; }
+
+    .features {
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap:2rem; margin-bottom:3rem;
+    }
+    .feature-card {
+      background:#fff; padding:2rem; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,.1);
+      text-align:center; transition: transform .3s;
+    }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-icon { font-size:3rem; margin-bottom:1rem; }
+    .feature-card h3 { color:#17a2b8; margin-bottom:.75rem; }
+
+    /* Quick Links in-page tile */
+    .quick-links { background:#f8f9fa; padding: 3rem 0; }
+    .quick-links .ql-card {
+      background:#fff; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,.1);
+      padding:2rem; max-width:1200px; margin:0 auto;
+    }
+    .quick-links h2 {
+      font-size:1.75rem; color:#17a2b8; text-align:center; margin-bottom:.75rem;
+    }
+    .quick-links p.sub { text-align:center; color:#666; margin-bottom:1.5rem; }
+    .quick-links .links {
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem;
+    }
+    .quick-links .links a {
+      display:flex; align-items:center; gap:.75rem; padding:.9rem 1rem; border-radius:12px;
+      text-decoration:none; background:#fff; border:1px solid #e9ecef; color:#138496;
+      transition: box-shadow .2s, transform .2s, background .2s;
+    }
+    .quick-links .links a .emoji { font-size:1.25rem; line-height:1; }
+    .quick-links .links a:hover { background:#fff; transform: translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,.08); }
+
+    /* Ensure hero heading scales on phones */
+    @media (max-width:768px) {
+      .hero h2 { font-size: 1.9rem; }
+    }
+  </style>
+
+  <!-- Defer script so the DOM exists before JS runs -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Site Header / Nav (style + JS shared across pages) -->
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo-circle">
+          <img src="https://cdn.shopify.com/s/files/1/0659/6208/2392/files/CrossRoads_Logo_1.png?v=1761243269" alt="CrossRoads Preschool logo">
+        </div>
+        <div class="school-info">
+          <h1>CrossRoads Preschool</h1>
+          <p>Hebron, KY</p>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-controls="nav-menu" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="parents.html">Parents</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Where Little Hearts Meet Jesus</h2>
+      <p>A Christ-centered learning environment for children ages 3 &amp; 4 at Hebron Baptist Church</p>
+      <div class="cta-buttons">
+        <a class="btn btn-primary" href="https://www.crossroadshbc.org/_files/ugd/b87025_c750565ea02a44dda9e8f63490d55011.pdf" target="_blank" rel="noopener">Register for 2025–26</a>
+        <a class="btn btn-secondary" href="contact.html">Schedule a Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <section class="container">
+    <div class="section-header">
+      <h2>Why Choose CrossRoads?</h2>
+      <p>Building strong foundations in faith, learning, and friendship</p>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">✝️</div>
+        <h3>Christ-Centered</h3>
+        <p>Biblical values integrated into daily learning, helping children grow in faith and character.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Small Class Sizes</h3>
+        <p>12 students per class with dedicated teachers and assistants for personalized attention.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Enrichment Programs</h3>
+        <p>Spanish class, WEBBY Dance, and UPfield Soccer to explore diverse interests and talents.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏫</div>
+        <h3>Flexible Schedules</h3>
+        <p>Morning and afternoon sessions with 2, 3, or 4-day options to fit your family’s needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links tile (in-page) -->
+  <section class="quick-links">
+    <div class="ql-card">
+      <h2>Quick Links</h2>
+      <p class="sub">Commonly requested forms—one tap away</p>
+
+      <div class="links">
+        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_c750565ea02a44dda9e8f63490d55011.pdf" target="_blank" rel="noopener">
+          <span class="emoji">📝</span>
+          <span>2025–26 Registration Form</span>
+        </a>
+        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_48999d64465e49f39ad15087094d1e93.pdf" target="_blank" rel="noopener">
+          <span class="emoji">🚗</span>
+          <span>Authorized Pickup Form</span>
+        </a>
+        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_1b398e26814d4b43ad79a3980d938076.pdf" target="_blank" rel="noopener">
+          <span class="emoji">📷</span>
+          <span>Emergency &amp; Photo Release</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  </footer>
+<footer class="site-footer" role="contentinfo">
+  <div class="bar" aria-hidden="true"></div>
+
+  <div class="footer-inner">
+    <div class="footer-column footer-info">
+      <h4>CrossRoads Preschool</h4>
+      <p class="footer-text">Located at Hebron Baptist Church</p>
+      <p class="footer-text">3435 Limaburg Rd<br>Hebron, KY 41048</p>
+    </div>
+
+    <div class="footer-column footer-links-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a class="footer-link" href="index.html">Home</a></li>
+        <li><a class="footer-link" href="curriculum.html">Curriculum</a></li>
+        <li><a class="footer-link" href="parents.html">Parents</a></li>
+        <li><a class="footer-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column footer-contact">
+      <h4>Contact Us</h4>
+      <p class="footer-text">Phone: <a href="tel:+18595862287">(859) 586-2287</a></p>
+      <p class="footer-text">Email: <a href="mailto:director@crossroadshbc.org">director@crossroadshbc.org</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 CrossRoads Preschool. All rights reserved. | Guiding children at the crossroads of faith and learning.
+  </div>
+</footer>
+
+</body>
+</html>
 
     /* Quick Links in-page tile */
     .quick-links { background:#f8f9fa; padding: 3rem 0; }
