@@ -301,18 +301,53 @@ section {
   background-color: #007697;
   transform: translateY(-2px);
 }
-
-/* Optional card for the contact info / quick links on the right */
-.contact-side-card {
-  background: #ffffff;
-  padding: 1.5rem 1.75rem;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+/* ===== Contact Page Layout Improvements ===== */
+.contact-page .grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* make the form wider than the info */
+  gap: 2.5rem;
+  align-items: start;
 }
 
-.contact-side-card h3 {
-  margin-top: 0;
-  color: #008caa;
+.contact-page .card {
+  padding: 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contact-page form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-page input,
+.contact-page textarea {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.contact-page textarea {
+  min-height: 180px;
+}
+
+.contact-page .btn {
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* Make it stack on smaller screens */
+@media (max-width: 900px) {
+  .contact-page .grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Make links inside cards match brand color */
+.card a { color: #0b7c91; text-decoration: underline; }
+.card a:hover { color: #085e6e; }
+
+/* Slightly taller message box on desktop */
+@media (min-width: 901px) {
+  .contact-page textarea { min-height: 220px; }
 }
 
 /* Stack on mobile */
