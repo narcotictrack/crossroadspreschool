@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curriculum – CrossRoads Preschool</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#333; line-height:1.6; }
+    header { background: linear-gradient(135deg,#17a2b8 0%,#138496 100%); color:#fff; padding:1rem 0; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+    .header-content { max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; justify-content:space-between; align-items:center; }
+    .logo-section { display:flex; align-items:center; gap:1rem; }
+    .logo-circle { width:80px; height:80px; background:#fff; border-radius:50%; padding:5px; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+    .logo-circle img { width:100%; height:100%; object-fit:contain; }
+    .school-info h1 { font-size:2rem; margin-bottom:0.25rem; }
+    .school-info p { font-size:1rem; opacity:0.95; }
+    nav { display:flex; gap:2rem; }
+    nav a { color:#fff; text-decoration:none; font-weight:500; transition:opacity 0.3s; }
+    nav a:hover { opacity:0.8; }
+
+    .hero {
+      background: linear-gradient(rgba(23,162,184,0.85), rgba(19,132,150,0.85)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2387CEEB" width="1200" height="600"/><path fill="%2390EE90" d="M0 400 Q 300 350 600 400 T 1200 400 L 1200 600 L 0 600 Z"/><path fill="%2376C776" d="M0 450 Q 300 420 600 450 T 1200 450 L 1200 600 L 0 600 Z"/></svg>');
+      background-size:cover; background-position:center; color:#fff; padding:4rem 2rem; text-align:center;
+    }
+    .hero-content { max-width:800px; margin:0 auto; }
+    .hero h2 { font-size:2.25rem; margin-bottom:0.75rem; text-shadow:2px 2px 4px rgba(0,0,0,0.3); }
+    .hero p { font-size:1.15rem; text-shadow:1px 1px 2px rgba(0,0,0,0.3); }
+
+    .container { max-width:1200px; margin:0 auto; padding:4rem 2rem; }
+    .section-header { text-align:center; margin-bottom:2rem; }
+    .section-header h2 { font-size:2.25rem; color:#17a2b8; margin-bottom:0.5rem; }
+    .section-header p { font-size:1.1rem; color:#666; }
+
+    .intro { margin: 1rem auto 2rem; max-width:900px; color:#444; text-align:left; }
+    .intro img { max-width:100%; height:auto; border-radius:15px; margin-bottom:2rem; }
+
+    .session-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(500px,1fr)); gap:3rem; margin-top:2rem; }
+    .session-card { background:#fff; padding:2rem; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
+    .session-card h3 { color:#17a2b8; font-size:1.6rem; margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:3px solid #17a2b8; }
+    .age-group { margin-top:1.25rem; }
+    .age-group h4 { color:#333; font-size:1.15rem; margin:1.25rem 0 0.5rem; }
+    .goals { margin-left:1rem; }
+    .goals li { margin:0.35rem 0; }
+
+    footer { background:#333; color:#fff; padding:3rem 2rem 1.5rem; }
+    .footer-content { max-width:1200px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:2rem; margin-bottom:2rem; }
+    .footer-section h4 { color:#17a2b8; margin-bottom:1rem; }
+    .footer-bottom { text-align:center; padding-top:2rem; border-top:1px solid #555; color:#999; }
+
+    @media (max-width:768px){
+      .header-content { flex-direction:column; text-align:center; gap:1rem; }
+      nav { flex-direction:column; gap:0.5rem; }
+      .hero h2 { font-size:1.75rem; }
+      .session-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo-circle">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='95' fill='%2387CEEB'/%3E%3Cellipse cx='100' cy='130' rx='80' ry='35' fill='%2390EE90'/%3E%3Cpath d='M 60 120 Q 100 110 140 120' fill='%23D2B48C' stroke='%238B4513' stroke-width='2'/%3E%3Crect x='95' y='70' width='10' height='50' fill='%238B4513'/%3E%3Crect x='85' y='65' width='30' height='10' fill='%238B4513'/%3E%3Ccircle cx='70' cy='125' r='8' fill='%23FFD700'/%3E%3Ccircle cx='70' cy='115' r='6' fill='%23FFD700'/%3E%3Ccircle cx='130' cy='120' r='8' fill='%2398FB98'/%3E%3Ccircle cx='130' cy='110' r='6' fill='%2398FB98'/%3E%3C/svg%3E" alt="CrossRoads Preschool logo showing cross and hills">
+        </div>
+        <div class="school-info">
+          <h1>CrossRoads Preschool</h1>
+          <p>Hebron, KY</p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html#home">Home</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="index.html#classes">Classes</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Curriculum</h2>
+      <p>Bright Beginnings by Gospel Light, enhanced by our Christian teaching staff</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="section-header">
+      <h2>Overview</h2>
+      <p>Rooted in faith. Built for growth.</p>
+    </div>
+
+    <div class="intro">
+      <img src="https://static.wixstatic.com/media/214ec6_c5592548d3382d904e712f41993d8674.jpg/v1/fill/w_541,h_380,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/214ec6_c5592548d3382d904e712f41993d8674.jpg" alt="Classroom activity at CrossRoads Preschool">
+      <p>At CrossRoads Preschool we offer a Christian curriculum developed by Gospel Light titled Bright Beginnings. This curriculum is enhanced by our own staff of Christian teachers.</p>
+      <p>Each month revolves around a Biblical theme with a new Bible story each week. From this theme we create hands-on activities for preschoolers to explore and learn in centers. Students spend time daily in centers such as art, dramatic play, library, science, blocks, music, and math.</p>
+      <p>Academically we focus on one letter and number per week, a color of the month, shapes, rhyming, and the calendar. The goals below guide learning through the school year.</p>
+    </div>
+
+    <div class="session-grid">
+      <!-- 3's Class -->
+      <section class="session-card">
+        <h3>3’s Class Curriculum Goals</h3>
+        <!-- Language and Literacy -->
+        <div class="age-group">
+          <h4>Language and Literacy</h4>
+          <ul class="goals">
+            <li>Communicate clearly in short sentences</li>
+            <li>Use “I”, “You” and “Me” correctly</li>
+            <li>Name familiar objects in pictures</li>
+            <li>Repeat songs and finger plays</li>
+            <li>Listen quietly to a short story</li>
+            <li>Recognize first name in print</li>
+            <li>Begin printing letters of first name</li>
+            <li>“Read” a book and understand front to back, left to right</li>
+            <li>“Read” from a chart with left to right tracking</li>
+          </ul>
+        </div>
+        <!-- Cognitive Development -->
+        <div class="age-group">
+          <h4>Cognitive Development</h4>
+          <ul class="goals">
+            <li>Curious and explores surroundings</li>
+            <li>Knows first and last name</li>
+            <li>Identifies primary colors and basic shapes</li>
+            <li>Identifies objects by size</li>
+            <li>Understands counting to 10</li>
+            <li>Names 3 objects from memory</li>
+            <li>Understands positional words and opposites</li>
+            <li>Completes a 5–10 piece puzzle</li>
+            <li>Recognizes numerals 0–10</li>
+          </ul>
+        </div>
+        <!-- Gross Motor Skills -->
+        <div class="age-group">
+          <h4>Gross Motor Skills</h4>
+          <ul class="goals">
+            <li>Jumps with both feet</li>
+            <li>Hops on one foot</li>
+            <li>Climbs stairs alternating feet</li>
+            <li>Balances on one foot</li>
+            <li>Throws ball forward</li>
+            <li>Walks on a balance beam</li>
+            <li>Catches a large ball</li>
+          </ul>
+        </div>
+        <!-- Fine Motor Skills -->
+        <div class="age-group">
+          <h4>Fine Motor Skills</h4>
+          <ul class="goals">
+            <li>Holds scissors correctly</li>
+            <li>Participates in finger play songs</li>
+            <li>Builds and stacks blocks</li>
+            <li>Pounds, rolls, and squeezes playdoh</li>
+            <li>Strings beads with pattern cards</li>
+            <li>Glues and pastes</li>
+            <li>Pours and mixes</li>
+            <li>Uses sewing and lacing cards</li>
+            <li>Draws a two part person</li>
+            <li>Holds crayon and pencil appropriately</li>
+          </ul>
+        </div>
+        <!-- Self Help Skills -->
+        <div class="age-group">
+          <h4>Self-Help Skills</h4>
+          <ul class="goals">
+            <li>Uses bathroom independently</li>
+            <li>Dresses with little assistance</li>
+            <li>Drinks from an open cup with few spills</li>
+            <li>Washes hands independently</li>
+          </ul>
+        </div>
+        <!-- Social and Emotional Skills -->
+        <div class="age-group">
+          <h4>Social and Emotional Skills</h4>
+          <ul class="goals">
+            <li>Shows concern for peers</li>
+            <li>Accepts and responds to rules</li>
+            <li>Plays and shares with others</li>
+            <li>Waits turn</li>
+            <li>Helps with chores</li>
+            <li>Expresses feelings appropriately</li>
+            <li>Happy and cheerful at school</li>
+            <li>Follows directions</li>
+            <li>Learns manners</li>
+            <li>Knows general daily schedule and anticipates what’s next</li>
+          </ul>
+        </div>
+        <!-- Science and Social Studies -->
+        <div class="age-group">
+          <h4>Science and Social Studies</h4>
+          <ul class="goals">
+            <li>Names members of family</li>
+            <li>Names habitats and who lives there</li>
+            <li>Names rooms in the home</li>
+            <li>Names 5 community helpers</li>
+            <li>Participates in simple experiments</li>
+            <li>Enjoys nature projects and walks</li>
+            <li>Understands basics of weather</li>
+            <li>Names 6 body parts</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4’s Class -->
+      <section class="session-card">
+        <h3>4’s Class Curriculum Goals</h3>
+        <div class="age-group">
+          <h4>Language and Literacy</h4>
+          <ul class="goals">
+            <li>Recognizes first and last name in print</li>
+            <li>Prints first name</li>
+            <li>Recites and identifies alphabet</li>
+            <li>Recites finger plays, poems, rhymes, and songs</li>
+            <li>Identifies letters with appropriate sounds</li>
+            <li>Tells simple events in sequence…</li>
+            <li>Knows opposites</li>
+            <li>Identifies rhyming words</li>
+            <li>Recalls details and sequence in stories</li>
+            <li>Begins to identify sight words</li>
+          </ul>
+        </div>
+
+        <div class="age-group">
+          <h4>Cognitive Development</h4>
+          <ul class="goals">
+            <li>Knows address and telephone number</li>
+            <li>Forms sets of like and different</li>
+            <li>Knows age</li>
+            <li>Draws human figure with head, body, arms, legs, hands and feet</li>
+            <li>Identifies parts of own body</li>
+            <li>Recalls item removed from a group</li>
+            <li>Completes a 10-15 piece puzzle</li>
+          </ul>
+        </div>
+
+        <div class="age-group">
+          <h4>Gross Motor Skills</h4>
+          <ul class="goals">
+            <li>Walks forward and backward</li>
+            <li>Hops on one foot</li>
+            <li>Learning to skip</li>
+            <li>Gallops and runs</li>
+            <li>Jumps in place with feet together</li>
+            <li>Catches a ball</li>
+            <li>Does a forward somersault</li>
+            <li>Kicks a ball forward</li>
+            <li>Walks on a balance beam</li>
+          </ul>
+        </div>
+
+        <div class="age-group">
+          <h4>Fine Motor Skills</h4>
+          <ul class="goals">
+            <li>Good finger/hand coordination</li>
+            <li>Holds scissors correctly</li>
+            <li>Ties shoes</li>
+            <li>Strings beads</li>
+            <li>Cuts along straight and circular lines</li>
+            <li>Holds pencil and crayon appropriately</li>
+          </ul>
+        </div>
+
+        <div class="age-group">
+          <h4>Self-Help Skills</h4>
+          <ul class="goals">
+            <li>Uses bathroom independently</li>
+            <li>Dresses independently</li>
+            <li>Uses good table manners when eating</li>
+          </ul>
+        </div>
+
+        <div class="age-group">
+          <h4>Social and Emotional Skills</h4>
+          <ul class="goals">
+            <li>Plays and shares cooperatively</li>
+            <li>Follows directions and rules</li>
+            <li>Uses good manners</li>
+            <li>Waits patiently for turn</li>
+            <li>Participates in group activities</li>
+            <li>Helps with classroom tasks</li>
+            <li>Is thoughtful of others</li>
+            <li>Expresses feelings appropriately</li>
+            <li>Makes choices and solves problems</li>
+            <li>Accepts help and direction from adults</li>
+          </ul>
+        </div>
+
+        <div class="age-group">
+          <h4>Social Studies</h4>
+          <ul class="goals">
+            <li>Understands concept of money</li>
+            <li>Names 5 things that live in the ocean</li>
+            <li>Names 5 types of vehicles</li>
+            <li>Names 3 modes of transportation</li>
+            <li>Demonstrates knowledge of safety rules</li>
+            <li>Shows respect for peers and teachers</li>
+          </ul>
+        </div>
+
+        <div class="age-group">
+          <h4>Math and Science Skills</h4>
+          <ul class="goals">
+            <li>Identifies numerals 0–10</li>
+            <li>Recognizes shapes</li>
+            <li>Identifies differences in size</li>
+            <li>Groups objects by shape, color, size and texture</li>
+            <li>Understands time of day concepts</li>
+            <li>Participates in simple experiments</li>
+            <li>Understands temperature and weight concepts</li>
+            <li>Identifies objects in the environment</li>
+            <li>Prints numerals 0–10</li>
+          </ul>
+        </div>
+
+        <div class="age-group">
+          <h4>Music and Art Skills</h4>
+          <ul class="goals">
+            <li>Participates in musical activities</li>
+            <li>Repeats rhythmic patterns</li>
+            <li>Participates in and enjoys art activities</li>
+            <li>Uses materials appropriately and cleans up</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>CrossRoads Preschool</h4>
+        <p>Located at Hebron Baptist Church</p>
+        <p>Hebron, KY</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <p><a href="index.html" style="color:#17a2b8; text-decoration:none;">Home</a></p>
+        <p><a href="curriculum.html" style="color:#17a2b8; text-decoration:none;">Curriculum</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Phone: [Phone Number]</p>
+        <p>Email: [Email Address]</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 CrossRoads Preschool. All rights reserved. | Guiding children at the crossroads of faith and learning.</p>
+    </div>
+  </footer>
+</body>
+</html>
