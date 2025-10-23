@@ -4,124 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Parents – CrossRoads Preschool</title>
+
+  <!-- shared site files -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <!-- page-specific styles only (no header/nav/hamburger rules here) -->
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#333; line-height:1.6; }
-    header { background: linear-gradient(135deg,#17a2b8 0%,#138496 100%); color:#fff; padding:1rem 0; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
-    .header-content { max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; justify-content:space-between; align-items:center; }
-    .logo-section { display:flex; align-items:center; gap:1rem; }
-    .logo-circle { width:80px; height:80px; background:#fff; border-radius:50%; padding:5px; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
-    .logo-circle img { width:100%; height:100%; object-fit:contain; }
-    .school-info h1 { font-size:2rem; margin-bottom:0.25rem; }
-    .school-info p { font-size:1rem; opacity:0.95; }
-    nav { display:flex; gap:2rem; }
-    nav a { color:#fff; text-decoration:none; font-weight:500; transition:opacity 0.3s; }
-    nav a:hover { opacity:0.8; }
-
-    .hero {
-      background: linear-gradient(rgba(23,162,184,0.85), rgba(19,132,150,0.85)),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2387CEEB" width="1200" height="600"/><path fill="%2390EE90" d="M0 400 Q 300 350 600 400 T 1200 400 L 1200 600 L 0 600 Z"/><path fill="%2376C776" d="M0 450 Q 300 420 600 450 T 1200 450 L 1200 600 L 0 600 Z"/></svg>');
-      background-size:cover; background-position:center; color:#fff; padding:4rem 2rem; text-align:center;
+    .hero{
+      background:linear-gradient(rgba(23,162,184,.85),rgba(19,132,150,.85)),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2387CEEB" width="1200" height="600"/><path fill="%2390EE90" d="M0 400 Q 300 350 600 400 T 1200 400 L 1200 600 L 0 600 Z"/><path fill="%2376C776" d="M0 450 Q 300 420 600 450 T 1200 450 L 1200 600 L 0 600 Z"/></svg>');
+      background-size:cover;background-position:center;color:#fff;padding:4rem 2rem;text-align:center;
     }
-    .hero-content { max-width:800px; margin:0 auto; }
-    .hero h2 { font-size:2.25rem; margin-bottom:0.75rem; text-shadow:2px 2px 4px rgba(0,0,0,0.3); }
-    .hero p { font-size:1.15rem; text-shadow:1px 1px 2px rgba(0,0,0,0.3); }
+    .hero-content{max-width:800px;margin:0 auto}
+    .hero h2{font-size:2.25rem;margin-bottom:.75rem;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+    .hero p{font-size:1.15rem;text-shadow:1px 1px 2px rgba(0,0,0,.3)}
 
-    .container { max-width:1200px; margin:0 auto; padding:4rem 2rem; }
-    .section-header { text-align:center; margin-bottom:2rem; }
-    .section-header h2 { font-size:2.25rem; color:#17a2b8; margin-bottom:0.5rem; }
-    .section-header p { font-size:1.1rem; color:#666; }
+    .container{max-width:1200px;margin:0 auto;padding:4rem 2rem}
+    .section-header{text-align:center;margin-bottom:2rem}
+    .section-header h2{font-size:2.25rem;color:#17a2b8;margin-bottom:.5rem}
+    .section-header p{font-size:1.1rem;color:#666}
 
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap:2rem; }
-    .card { background:#fff; padding:2rem; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
-    .card h3 { color:#17a2b8; font-size:1.5rem; margin-bottom:0.75rem; padding-bottom:0.5rem; border-bottom:3px solid #17a2b8; }
-    .muted { color:#555; }
-    .list { margin-left:1.25rem; }
-    .list li { margin:0.35rem 0; }
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
+    .card{background:#fff;padding:2rem;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+    .card h3{color:#17a2b8;font-size:1.5rem;margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:3px solid #17a2b8}
+    .muted{color:#555}
+    .list{margin-left:1.25rem}
+    .list li{margin:.35rem 0}
 
-    .links { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1rem; margin-top:1rem; }
-    .links a { display:block; padding:0.75rem 1rem; border-radius:10px; text-decoration:none; background:#f8f9fa; color:#138496; border:1px solid #e9ecef; }
-    .links a:hover { background:#fff; box-shadow:0 6px 14px rgba(0,0,0,0.08); }
+    .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+    .links a{display:block;padding:.75rem 1rem;border-radius:10px;text-decoration:none;background:#f8f9fa;color:#138496;border:1px solid #e9ecef}
+    .links a:hover{background:#fff;box-shadow:0 6px 14px rgba(0,0,0,.08)}
 
-    /* Highlighted Forms card */
-    .card-forms {
-      background: linear-gradient(135deg, #138496, #0f6e7c);
-      color:#fff;
-      border:none;
-    }
-    .card-forms h3 {
-      color:#fff;
-      border-bottom-color: rgba(255,255,255,0.6);
-    }
-    .card-forms p, .card-forms li { color:#fff; }
-    .links.inverse a {
-      background: rgba(255,255,255,0.08);
-      color:#fff;
-      border:1px solid rgba(255,255,255,0.35);
-    }
-    .links.inverse a:hover {
-      background: rgba(255,255,255,0.18);
-      box-shadow:0 10px 18px rgba(0,0,0,0.15);
-    }
-
-    footer { background:#333; color:#fff; padding:3rem 2rem 1.5rem; }
-    .footer-content { max-width:1200px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:2rem; margin-bottom:2rem; }
-    .footer-section h4 { color:#17a2b8; margin-bottom:1rem; }
-    .footer-bottom { text-align:center; padding-top:2rem; border-top:1px solid #555; color:#999; }
-
-    @media (max-width:768px){
-      .header-content { flex-direction:column; text-align:center; gap:1rem; }
-      nav { flex-direction:column; gap:0.5rem; }
-      .hero h2 { font-size:1.75rem; }
-    }
-    /* Hamburger button base */
-.menu-toggle {
-  display: none;
-  background: transparent;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  padding: .5rem;
-  border-radius: 8px;
-}
-
-/* Mobile nav behavior */
-@media (max-width: 768px) {
-  .header-content { flex-wrap: wrap; }
-
-  .menu-toggle { display: block; }
-
-  /* Collapse menu by default */
-  #nav-menu {
-    display: none;
-    flex-direction: column;
-    gap: .75rem;
-    width: 100%;
-    margin-top: .75rem;
-    padding: 1rem 0;
-    text-align: center;
-
-    /* Match site style with a soft gradient dropdown */
-    background: linear-gradient(135deg,#17a2b8 0%,#138496 100%);
-    border-top: 1px solid rgba(255,255,255,.25);
-    box-shadow: 0 6px 16px rgba(0,0,0,.15);
-  }
-  /* Show when toggled */
-  #nav-menu.show { display: flex; }
-
-  /* Taller tap targets */
-  #nav-menu a { padding: .5rem 0; }
-}
-
-/* Desktop keeps inline nav */
-@media (min-width: 769px) {
-  #nav-menu { display: flex; gap: 2rem; }
-  .menu-toggle { display: none; }
-}
-
+    /* highlighted Forms card (inverse) */
+    .card-forms{background:linear-gradient(135deg,#138496,#0f6e7c);color:#fff;border:none}
+    .card-forms h3{color:#fff;border-bottom-color:rgba(255,255,255,.6)}
+    .card-forms p,.card-forms li{color:#fff}
+    .links.inverse a{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.35)}
+    .links.inverse a:hover{background:rgba(255,255,255,.18);box-shadow:0 10px 18px rgba(0,0,0,.15)}
   </style>
 </head>
 <body>
+
 <header>
   <div class="header-content">
     <div class="logo-section">
@@ -135,7 +59,8 @@
     </div>
 
     <button class="menu-toggle" aria-label="Toggle menu" aria-controls="nav-menu" aria-expanded="false">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+      <!-- set explicit size so icon always renders -->
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </button>
@@ -149,174 +74,173 @@
   </div>
 </header>
 
+<section class="hero">
+  <div class="hero-content">
+    <h2>Parents</h2>
+    <p>Family Handbook, schedules, and helpful links</p>
+  </div>
+</section>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Parents</h2>
-      <p>Family Handbook, schedules, and helpful links</p>
-    </div>
-  </section>
+<main class="container">
+  <div class="section-header">
+    <h2>Family Handbook</h2>
+    <p class="muted">Welcome to CrossRoads Preschool</p>
+  </div>
 
-  <main class="container">
-    <div class="section-header">
-      <h2>Family Handbook</h2>
-      <p class="muted">Welcome to CrossRoads Preschool</p>
-    </div>
+  <div class="grid">
+    <section class="card">
+      <h3>Welcome</h3>
+      <p>The staff of CrossRoads Preschool is pleased to welcome you and your child. CrossRoads is a state-licensed school operated as a non-profit community outreach program under the authorization of Hebron Baptist Church, and is open to all children without regard to race, creed, or color.</p>
+      <p class="muted" style="margin-top:.5rem;">This packet helps answer common questions about our policies. Please keep it for future reference.</p>
+    </section>
 
-    <div class="grid">
-      <section class="card">
-        <h3>Welcome</h3>
-        <p>The staff of CrossRoads Preschool is pleased to welcome you and your child. CrossRoads is a state-licensed school operated as a non-profit community outreach program under the authorization of Hebron Baptist Church, and is open to all children without regard to race, creed, or color.</p>
-        <p class="muted" style="margin-top:0.5rem;">This packet helps answer common questions about our policies. Please keep it for future reference.</p>
-      </section>
+    <section class="card">
+      <h3>Mission Statement</h3>
+      <p>The mission of CrossRoads Preschool is to nurture a spiritual, educational, and social foundation for each preschooler by providing a loving, Christian environment where children can express themselves and learn through creative play and an enriching curriculum.</p>
+    </section>
 
-      <section class="card">
-        <h3>Mission Statement</h3>
-        <p>The mission of CrossRoads Preschool is to nurture a spiritual, educational, and social foundation for each preschooler by providing a loving, Christian environment where children can express themselves and learn through creative play and an enriching curriculum.</p>
-      </section>
+    <section class="card">
+      <h3>Daily Programs and Routines</h3>
+      <ul class="list">
+        <li>Programs for 3 and 4 year olds.</li>
+        <li>3’s: two days per week, Mon & Wed or Tue & Thu.</li>
+        <li>4’s: three days per week (Mon–Wed or Tue–Thu) or four days per week (Mon–Thu).</li>
+        <li>Morning classes: 9:00 a.m. to 12:00 p.m.</li>
+        <li>Afternoon classes: 12:30 p.m. to 3:00 p.m.</li>
+        <li>Snack provided. Notify staff in writing of allergies. If allergies are a concern, please provide your child’s snack.</li>
+      </ul>
+    </section>
 
-      <section class="card">
-        <h3>Daily Programs and Routines</h3>
-        <ul class="list">
-          <li>Programs for 3 and 4 year olds.</li>
-          <li>3’s: two days per week, Mon & Wed or Tue & Thu.</li>
-          <li>4’s: three days per week (Mon–Wed or Tue–Thu) or four days per week (Mon–Thu).</li>
-          <li>Morning classes: 9:00 a.m. to 12:00 p.m.</li>
-          <li>Afternoon classes: 12:30 p.m. to 3:00 p.m.</li>
-          <li>Snack provided. Notify staff in writing of allergies. If allergies are a concern, please provide your child’s snack.</li>
-        </ul>
-      </section>
+    <section class="card">
+      <h3>Closings and Delays</h3>
+      <p>We follow the Boone County Schools calendar closely for holidays and weather decisions. If Boone County is on a 1 or 2 hour delay, classes begin at 10:00 a.m. If Boone County is closed to in-person learning, CrossRoads is closed. There is no credit for days missed due to cancellation.</p>
+      <p class="muted" style="margin-top:.5rem;">Families running late due to siblings are welcome. Ring the buzzer on arrival.</p>
+      <p class="muted">Do not use the steps between upper and lower lots during inclement weather.</p>
+    </section>
 
-      <section class="card">
-        <h3>Closings and Delays</h3>
-        <p>We follow the Boone County Schools calendar closely for holidays and weather decisions. If Boone County is on a 1 or 2 hour delay, classes begin at 10:00 a.m. If Boone County is closed to in-person learning, CrossRoads is closed. There is no credit for days missed due to cancellation.</p>
-        <p class="muted" style="margin-top:0.5rem;">Families running late due to siblings are welcome. Ring the buzzer on arrival.</p>
-        <p class="muted">Do not use the steps between upper and lower lots during inclement weather.</p>
-      </section>
+    <section class="card">
+      <h3>Enrollment Procedures</h3>
+      <ul class="list">
+        <li>Returning 5-year-olds entering the 4’s program receive priority in mid-February.</li>
+        <li>Open enrollment: first Wednesday in March, 9–11 a.m.</li>
+        <li>Priority order: returning students and siblings, Hebron Baptist Church members, then families with past siblings, then general public.</li>
+        <li>If full, a waiting list will be kept.</li>
+      </ul>
+    </section>
 
-      <section class="card">
-        <h3>Enrollment Procedures</h3>
-        <ul class="list">
-          <li>Returning 5-year-olds entering the 4’s program receive priority in mid-February.</li>
-          <li>Open enrollment: first Wednesday in March, 9–11 a.m.</li>
-          <li>Priority order: returning students and siblings, Hebron Baptist Church members, then families with past siblings, then general public.</li>
-          <li>If full, a waiting list will be kept.</li>
-        </ul>
-      </section>
+    <section class="card">
+      <h3>Arrival and Departure</h3>
+      <ul class="list">
+        <li>Doors open at 8:58 a.m. and 12:28 p.m. and lock at 9:15 and 12:45.</li>
+        <li>Enter via the main preschool doors. Use the doorbell if locked.</li>
+        <li>Walk your child to class and sign in. Quick goodbyes help children transition.</li>
+        <li>Authorized pickup and photo ID required if not recognized.</li>
+        <li>Late pickup fee: $5 per child per 15 minutes, paid to teachers before next school day.</li>
+      </ul>
+    </section>
 
-      <section class="card">
-        <h3>Arrival and Departure</h3>
-        <ul class="list">
-          <li>Doors open at 8:58 a.m. and 12:28 p.m. and lock at 9:15 and 12:45.</li>
-          <li>Enter via the main preschool doors. Use the doorbell if locked.</li>
-          <li>Walk your child to class and sign in. Quick goodbyes help children transition.</li>
-          <li>Authorized pickup and photo ID required if not recognized.</li>
-          <li>Late pickup fee: $5 per child per 15 minutes, paid to teachers before next school day.</li>
-        </ul>
-      </section>
+    <section class="card">
+      <h3>Security</h3>
+      <p>Cameras are located at entry doors and the playground. Doors remain locked. Visitors are buzzed in.</p>
+    </section>
 
-      <section class="card">
-        <h3>Security</h3>
-        <p>Cameras are located at entry doors and the playground. Doors remain locked. Visitors are buzzed in.</p>
-      </section>
+    <section class="card">
+      <h3>Needs and Requirements</h3>
+      <ul class="list">
+        <li>KY Immunization Certificate on file within 10 days of enrollment.</li>
+        <li>All allergies must be provided in writing to the director and staff.</li>
+        <li>All children must be fully potty trained and independent with clothing, wiping, and handwashing.</li>
+        <li>Send a spare outfit in a labeled zip bag.</li>
+        <li>Close-toed shoes only. Gym shoes are best. No sandals, flip-flops, or crocs.</li>
+      </ul>
+    </section>
 
-      <section class="card">
-        <h3>Needs and Requirements</h3>
-        <ul class="list">
-          <li>KY Immunization Certificate on file within 10 days of enrollment.</li>
-          <li>All allergies must be provided in writing to the director and staff.</li>
-          <li>All children must be fully potty trained and independent with clothing, wiping, and handwashing.</li>
-          <li>Send a spare outfit in a labeled zip bag.</li>
-          <li>Close-toed shoes only. Gym shoes are best. No sandals, flip-flops, or crocs.</li>
-        </ul>
-      </section>
+    <section class="card">
+      <h3>Health Policies</h3>
+      <p>Please keep children home if sick or contagious. Children must be fever free for 24 hours to return. Staff do not administer medications.</p>
+      <p style="margin-top:.5rem;">Emergency steps unless otherwise directed:</p>
+      <ul class="list">
+        <li>Notify parent or guardian using numbers provided.</li>
+        <li>Contact pediatrician on the emergency form.</li>
+        <li>Transport by ambulance or private vehicle to the designated hospital.</li>
+      </ul>
+    </section>
 
-      <section class="card">
-        <h3>Health Policies</h3>
-        <p>Please keep children home if sick or contagious. Children must be fever free for 24 hours to return. Staff do not administer medications.</p>
-        <p style="margin-top:0.5rem;">Emergency steps unless otherwise directed:</p>
-        <ul class="list">
-          <li>Notify parent or guardian using numbers provided.</li>
-          <li>Contact pediatrician on the emergency form.</li>
-          <li>Transport by ambulance or private vehicle to the designated hospital.</li>
-        </ul>
-      </section>
+    <section class="card">
+      <h3>Discrimination Policy</h3>
+      <p>Students, their Parents/Guardians, and all employees of CrossRoads Preschool do not discriminate based on sex, race, color, national origin, age, religion, marital status, or handicap in educational activities, admissions, or employment.</p>
+    </section>
 
-      <section class="card">
-        <h3>Discrimination Policy</h3>
-        <p>Students, their Parents/Guardians, and all employees of CrossRoads Preschool do not discriminate based on sex, race, color, national origin, age, religion, marital status, or handicap in educational activities, admissions, or employment.</p>
-      </section>
+    <section class="card">
+      <h3>Discipline</h3>
+      <p>We use kind, consistent, firm discipline with positive redirection. No physical punishment. Time away may be used to regain self-control. Persistent issues prompt a conference to set goals. If behavior is unsafe or extremely disruptive, a parent may be asked to pick up the child. Continued issues may result in dis-enrollment at the director’s discretion.</p>
+    </section>
 
-      <section class="card">
-        <h3>Discipline</h3>
-        <p>We use kind, consistent, firm discipline with positive redirection. No physical punishment. Time away may be used to regain self-control. Persistent issues prompt a conference to set goals. If behavior is unsafe or extremely disruptive, a parent may be asked to pick up the child. Continued issues may result in dis-enrollment at the director’s discretion.</p>
-      </section>
+    <section class="card">
+      <h3>Withdrawal Policy</h3>
+      <p>Two weeks written notice is required. Without notice, tuition for that period is still due. With notice, refunds are issued within 30 days less any outstanding charges.</p>
+    </section>
 
-      <section class="card">
-        <h3>Withdrawal Policy</h3>
-        <p>Two weeks written notice is required. Without notice, tuition for that period is still due. With notice, refunds are issued within 30 days less any outstanding charges.</p>
-      </section>
+    <section class="card">
+      <h3>Birthdays</h3>
+      <ul class="list">
+        <li>Coordinate with the teacher if you plan to bring treats. Cookies or packaged snacks work well.</li>
+        <li>Please do not bring cupcakes.</li>
+        <li>Party invitations should not be passed out at school unless the entire class is invited.</li>
+      </ul>
+    </section>
 
-      <section class="card">
-        <h3>Birthdays</h3>
-        <ul class="list">
-          <li>Coordinate with the teacher if you plan to bring treats. Cookies or packaged snacks work well.</li>
-          <li>Please do not bring cupcakes.</li>
-          <li>Party invitations should not be passed out at school unless the entire class is invited.</li>
-        </ul>
-      </section>
-
-      <!-- Highlighted Forms box -->
-      <section class="card card-forms">
-        <h3>Forms and Helpful Links</h3>
-        <div class="links inverse">
-          <a href="https://www.crossroadshbc.org/_files/ugd/b87025_1e6c9b494786403b978aa8525363dee9.pdf" target="_blank">School Calendar 2025-26</a>
-          <a href="https://www.crossroadshbc.org/_files/ugd/b87025_a670b3d708d24f09a384299dceb89f50.pdf" target="_blank">Most Recent Newsletter</a>
-          <a href="https://www.crossroadshbc.org/_files/ugd/b87025_c02f7434d20347808689ee262be326f1.pdf" target="_blank">2025-26 Snack Menu</a>
-          <a href="https://www.crossroadshbc.org/_files/ugd/b87025_48999d64465e49f39ad15087094d1e93.pdf" target="_blank">Pickup Authorization Form</a>
-          <a href="https://www.crossroadshbc.org/_files/ugd/b87025_1b398e26814d4b43ad79a3980d938076.pdf" target="_blank">Emergency & Photo Release</a>
-          <a href="https://www.crossroadshbc.org/_files/ugd/b87025_c750565ea02a44dda9e8f63490d55011.pdf" target="_blank">2025-26 Registration Form</a>
-        </div>
-      </section>
-
-      <section class="card">
-        <h3>Tuition</h3>
-        <p>Tuition rates are subject to change yearly. Current rates are listed on the Offerings page and on the current registration form.</p>
-        <ul class="list" style="margin-top:0.5rem;">
-          <li>Tuition is due on your child’s first day of class each month.</li>
-          <li>Preferred payment: auto draft, check, or money order. Please do not pay in cash.</li>
-          <li>Late fees: $5 after 7 calendar days. Dis-enrollment after 15 days late.</li>
-          <li>Bank fees for returned checks are the responsibility of the issuer.</li>
-          <li>The program budget and salaries are based on full enrollment. We cannot provide credit for absences.</li>
-        </ul>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>CrossRoads Preschool</h4>
-        <p>Located at Hebron Baptist Church</p>
-        <p>Hebron, KY</p>
+    <!-- Highlighted Forms box -->
+    <section class="card card-forms">
+      <h3>Forms and Helpful Links</h3>
+      <div class="links inverse">
+        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_1e6c9b494786403b978aa8525363dee9.pdf" target="_blank" rel="noopener">School Calendar 2025-26</a>
+        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_a670b3d708d24f09a384299dceb89f50.pdf" target="_blank" rel="noopener">Most Recent Newsletter</a>
+        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_c02f7434d20347808689ee262be326f1.pdf" target="_blank" rel="noopener">2025-26 Snack Menu</a>
+        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_48999d64465e49f39ad15087094d1e93.pdf" target="_blank" rel="noopener">Pickup Authorization Form</a>
+        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_1b398e26814d4b43ad79a3980d938076.pdf" target="_blank" rel="noopener">Emergency & Photo Release</a>
+        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_c750565ea02a44dda9e8f63490d55011.pdf" target="_blank" rel="noopener">2025-26 Registration Form</a>
       </div>
-     <div class="footer-section">
-  <h4>Quick Links</h4>
-  <p><a href="index.html" style="color:#17a2b8; text-decoration:none;">Home</a></p>
-  <p><a href="curriculum.html" style="color:#17a2b8; text-decoration:none;">Curriculum</a></p>
-  <p><a href="parents.html" style="color:#17a2b8; text-decoration:none;">Parents</a></p>
-  <p><a href="contact.html" style="color:#17a2b8; text-decoration:none;">Contact</a></p>
-</div>
-      <div class="footer-section">
-        <h4>Contact Us</h4>
-        <p>Phone: (859) 586-2287</p>
-        <p>Email: <a href="mailto:director@crossroadshbc.org" style="color:#17a2b8; text-decoration:none;">director@crossroadshbc.org</a></p>
-      </div>
+    </section>
+
+    <section class="card">
+      <h3>Tuition</h3>
+      <p>Tuition rates are subject to change yearly. Current rates are listed on the Offerings page and on the current registration form.</p>
+      <ul class="list" style="margin-top:.5rem;">
+        <li>Tuition is due on your child’s first day of class each month.</li>
+        <li>Preferred payment: auto draft, check, or money order. Please do not pay in cash.</li>
+        <li>Late fees: $5 after 7 calendar days. Dis-enrollment after 15 days late.</li>
+        <li>Bank fees for returned checks are the responsibility of the issuer.</li>
+        <li>The program budget and salaries are based on full enrollment. We cannot provide credit for absences.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>CrossRoads Preschool</h4>
+      <p>Located at Hebron Baptist Church</p>
+      <p>Hebron, KY</p>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 CrossRoads Preschool. All rights reserved. | Guiding children at the crossroads of faith and learning.</p>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <p><a href="index.html" style="color:#17a2b8;text-decoration:none;">Home</a></p>
+      <p><a href="curriculum.html" style="color:#17a2b8;text-decoration:none;">Curriculum</a></p>
+      <p><a href="parents.html" style="color:#17a2b8;text-decoration:none;">Parents</a></p>
+      <p><a href="contact.html" style="color:#17a2b8;text-decoration:none;">Contact</a></p>
     </div>
-  </footer>
-<script src="script.js"></script>
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>Phone: <a href="tel:+18595862287" style="color:#17a2b8;text-decoration:none;">(859) 586-2287</a></p>
+      <p>Email: <a href="mailto:director@crossroadshbc.org" style="color:#17a2b8;text-decoration:none;">director@crossroadshbc.org</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CrossRoads Preschool. All rights reserved. | Guiding children at the crossroads of faith and learning.</p>
+  </div>
+</footer>
+
 </body>
 </html>
