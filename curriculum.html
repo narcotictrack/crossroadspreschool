@@ -32,9 +32,29 @@
     .section-header h2 { font-size:2.25rem; color:#17a2b8; margin-bottom:0.5rem; }
     .section-header p { font-size:1.1rem; color:#666; }
 
-    .intro { margin: 1rem auto 2rem; max-width:900px; color:#444; text-align:left; }
-    .intro img { max-width:100%; height:auto; border-radius:15px; margin-bottom:2rem; }
+    /* Side-by-side overview */
+    .curriculum-flex {
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:40px;
+      margin-top:30px;
+    }
+    .curriculum-flex img {
+      width:40%;
+      max-width:520px;
+      border-radius:15px;
+      height:auto;
+    }
+    .curriculum-text {
+      width:50%;
+      max-width:620px;
+      text-align:left;
+      color:#444;
+    }
 
+    /* Cards for goals */
     .session-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(500px,1fr)); gap:3rem; margin-top:2rem; }
     .session-card { background:#fff; padding:2rem; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.1); }
     .session-card h3 { color:#17a2b8; font-size:1.6rem; margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:3px solid #17a2b8; }
@@ -53,6 +73,8 @@
       nav { flex-direction:column; gap:0.5rem; }
       .hero h2 { font-size:1.75rem; }
       .session-grid { grid-template-columns:1fr; }
+      .curriculum-flex { flex-direction:column; align-items:center; }
+      .curriculum-flex img, .curriculum-text { width:100%; }
     }
   </style>
 </head>
@@ -90,18 +112,22 @@
       <p>Rooted in faith. Built for growth.</p>
     </div>
 
-    <div class="intro">
-      <img src="https://static.wixstatic.com/media/214ec6_c5592548d3382d904e712f41993d8674.jpg/v1/fill/w_541,h_380,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/214ec6_c5592548d3382d904e712f41993d8674.jpg" alt="Classroom activity at CrossRoads Preschool">
-      <p>At CrossRoads Preschool we offer a Christian curriculum developed by Gospel Light titled Bright Beginnings. This curriculum is enhanced by our own staff of Christian teachers.</p>
-      <p>Each month revolves around a Biblical theme with a new Bible story each week. From this theme we create hands-on activities for preschoolers to explore and learn in centers. Students spend time daily in centers such as art, dramatic play, library, science, blocks, music, and math.</p>
-      <p>Academically we focus on one letter and number per week, a color of the month, shapes, rhyming, and the calendar. The goals below guide learning through the school year.</p>
+    <!-- Side-by-side image and text -->
+    <div class="curriculum-flex">
+      <img src="https://static.wixstatic.com/media/214ec6_c5592548d3382d904e712f41993d8674.jpg/v1/fill/w_541,h_380,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/214ec6_c5592548d3382d904e712f41993d8674.jpg" alt="Preschoolers coloring together at CrossRoads Preschool">
+      <div class="curriculum-text">
+        <p>At CrossRoads Preschool we offer a Christian curriculum developed by Gospel Light titled Bright Beginnings. This curriculum is enhanced by our own staff of Christian teachers.</p>
+        <p>Each month revolves around a Biblical theme with a new Bible story each week. From this theme we create hands on activities for preschoolers to explore and learn from in centers. Students spend time daily in centers such as art, dramatic play, library, science, blocks, music, and math.</p>
+        <p>Academically we focus on one letter and number per week, a color of the month, shapes, rhyming, and the calendar. The goals below guide learning through the school year.</p>
+      </div>
     </div>
 
+    <!-- Goals -->
     <div class="session-grid">
       <!-- 3's Class -->
       <section class="session-card">
-        <h3>3’s Class Curriculum Goals</h3>
-        <!-- Language and Literacy -->
+        <h3>3's Class Curriculum Goals</h3>
+
         <div class="age-group">
           <h4>Language and Literacy</h4>
           <ul class="goals">
@@ -116,83 +142,84 @@
             <li>“Read” from a chart with left to right tracking</li>
           </ul>
         </div>
-        <!-- Cognitive Development -->
+
         <div class="age-group">
           <h4>Cognitive Development</h4>
           <ul class="goals">
             <li>Curious and explores surroundings</li>
             <li>Knows first and last name</li>
-            <li>Identifies primary colors and basic shapes</li>
-            <li>Identifies objects by size</li>
-            <li>Understands counting to 10</li>
+            <li>Identifies primary colors</li>
+            <li>Identifies basic shapes</li>
+            <li>Identifies objects according to size</li>
+            <li>Understands concept of counting to 10</li>
             <li>Names 3 objects from memory</li>
             <li>Understands positional words and opposites</li>
-            <li>Completes a 5–10 piece puzzle</li>
-            <li>Recognizes numerals 0–10</li>
+            <li>Completes a 5 to 10 piece puzzle</li>
+            <li>Recognize numerals 0 to 10</li>
           </ul>
         </div>
-        <!-- Gross Motor Skills -->
+
         <div class="age-group">
           <h4>Gross Motor Skills</h4>
           <ul class="goals">
-            <li>Jumps with both feet</li>
+            <li>Jumps up and down with both feet</li>
             <li>Hops on one foot</li>
             <li>Climbs stairs alternating feet</li>
             <li>Balances on one foot</li>
             <li>Throws ball forward</li>
-            <li>Walks on a balance beam</li>
+            <li>Walks a few steps on a balance beam</li>
             <li>Catches a large ball</li>
           </ul>
         </div>
-        <!-- Fine Motor Skills -->
+
         <div class="age-group">
           <h4>Fine Motor Skills</h4>
           <ul class="goals">
             <li>Holds scissors correctly</li>
-            <li>Participates in finger play songs</li>
-            <li>Builds and stacks blocks</li>
-            <li>Pounds, rolls, and squeezes playdoh</li>
-            <li>Strings beads with pattern cards</li>
-            <li>Glues and pastes</li>
-            <li>Pours and mixes</li>
-            <li>Uses sewing and lacing cards</li>
-            <li>Draws a two part person</li>
+            <li>Participate in finger play songs</li>
+            <li>Puts blocks together and stacks</li>
+            <li>Pounds, rolls, squeezes playdoh</li>
+            <li>String beads with pattern cards</li>
+            <li>Glue and paste</li>
+            <li>Pour and mix</li>
+            <li>Use sewing and lacing cards</li>
+            <li>Draws two part person</li>
             <li>Holds crayon and pencil appropriately</li>
           </ul>
         </div>
-        <!-- Self Help Skills -->
+
         <div class="age-group">
-          <h4>Self-Help Skills</h4>
+          <h4>Self Help Skills</h4>
           <ul class="goals">
             <li>Uses bathroom independently</li>
             <li>Dresses with little assistance</li>
-            <li>Drinks from an open cup with few spills</li>
+            <li>Drinks from open cup with few spills</li>
             <li>Washes hands independently</li>
           </ul>
         </div>
-        <!-- Social and Emotional Skills -->
+
         <div class="age-group">
           <h4>Social and Emotional Skills</h4>
           <ul class="goals">
             <li>Shows concern for peers</li>
             <li>Accepts and responds to rules</li>
-            <li>Plays and shares with others</li>
+            <li>Plays and shares with other children</li>
             <li>Waits turn</li>
             <li>Helps with chores</li>
             <li>Expresses feelings appropriately</li>
             <li>Happy and cheerful at school</li>
             <li>Follows directions</li>
-            <li>Learns manners</li>
-            <li>Knows general daily schedule and anticipates what’s next</li>
+            <li>Learning manner skills</li>
+            <li>Know general schedule of day and anticipate what is next</li>
           </ul>
         </div>
-        <!-- Science and Social Studies -->
+
         <div class="age-group">
           <h4>Science and Social Studies</h4>
           <ul class="goals">
             <li>Names members of family</li>
-            <li>Names habitats and who lives there</li>
-            <li>Names rooms in the home</li>
+            <li>Names various habitats and who lives there</li>
+            <li>Names rooms in the house</li>
             <li>Names 5 community helpers</li>
             <li>Participates in simple experiments</li>
             <li>Enjoys nature projects and walks</li>
@@ -202,22 +229,23 @@
         </div>
       </section>
 
-      <!-- 4’s Class -->
+      <!-- 4's Class -->
       <section class="session-card">
-        <h3>4’s Class Curriculum Goals</h3>
+        <h3>4's Class Curriculum Goals</h3>
+
         <div class="age-group">
           <h4>Language and Literacy</h4>
           <ul class="goals">
             <li>Recognizes first and last name in print</li>
             <li>Prints first name</li>
             <li>Recites and identifies alphabet</li>
-            <li>Recites finger plays, poems, rhymes, and songs</li>
+            <li>Recites finger plays, poems, rhymes, songs</li>
             <li>Identifies letters with appropriate sounds</li>
-            <li>Tells simple events in sequence…</li>
+            <li>Tells simple events in sequence using sentences</li>
             <li>Knows opposites</li>
             <li>Identifies rhyming words</li>
             <li>Recalls details and sequence in stories</li>
-            <li>Begins to identify sight words</li>
+            <li>Begin to identify sight words</li>
           </ul>
         </div>
 
@@ -227,10 +255,10 @@
             <li>Knows address and telephone number</li>
             <li>Forms sets of like and different</li>
             <li>Knows age</li>
-            <li>Draws human figure with head, body, arms, legs, hands and feet</li>
+            <li>Draws human figure with head, body, arms, legs and indications of hands and feet</li>
             <li>Identifies parts of own body</li>
-            <li>Recalls item removed from a group</li>
-            <li>Completes a 10-15 piece puzzle</li>
+            <li>Recalls item removed from group</li>
+            <li>Completes 10 to 15 piece puzzle</li>
           </ul>
         </div>
 
@@ -239,30 +267,32 @@
           <ul class="goals">
             <li>Walks forward and backward</li>
             <li>Hops on one foot</li>
-            <li>Learning to skip</li>
-            <li>Gallops and runs</li>
+            <li>Learning how to skip</li>
+            <li>Gallops</li>
+            <li>Runs</li>
             <li>Jumps in place with feet together</li>
             <li>Catches a ball</li>
-            <li>Does a forward somersault</li>
-            <li>Kicks a ball forward</li>
-            <li>Walks on a balance beam</li>
+            <li>Does forward somersault</li>
+            <li>Kicks ball forward</li>
+            <li>Walk on a balance beam</li>
           </ul>
         </div>
 
         <div class="age-group">
           <h4>Fine Motor Skills</h4>
           <ul class="goals">
-            <li>Good finger/hand coordination</li>
+            <li>Good finger and hand coordination</li>
             <li>Holds scissors correctly</li>
             <li>Ties shoes</li>
             <li>Strings beads</li>
-            <li>Cuts along straight and circular lines</li>
+            <li>Cuts along straight line</li>
+            <li>Cuts along circular line</li>
             <li>Holds pencil and crayon appropriately</li>
           </ul>
         </div>
 
         <div class="age-group">
-          <h4>Self-Help Skills</h4>
+          <h4>Self Help Skills</h4>
           <ul class="goals">
             <li>Uses bathroom independently</li>
             <li>Dresses independently</li>
@@ -278,8 +308,8 @@
             <li>Uses good manners</li>
             <li>Waits patiently for turn</li>
             <li>Participates in group activities</li>
-            <li>Helps with classroom tasks</li>
-            <li>Is thoughtful of others</li>
+            <li>Helpful with classroom tasks</li>
+            <li>Thoughtful of others</li>
             <li>Expresses feelings appropriately</li>
             <li>Makes choices and solves problems</li>
             <li>Accepts help and direction from adults</li>
@@ -294,29 +324,30 @@
             <li>Names 5 types of vehicles</li>
             <li>Names 3 modes of transportation</li>
             <li>Demonstrates knowledge of safety rules</li>
-            <li>Shows respect for peers and teachers</li>
+            <li>Demonstrates respect for peers and teachers</li>
           </ul>
         </div>
 
         <div class="age-group">
           <h4>Math and Science Skills</h4>
           <ul class="goals">
-            <li>Identifies numerals 0–10</li>
+            <li>Identifies numerals 0 to 10</li>
             <li>Recognizes shapes</li>
             <li>Identifies differences in size</li>
             <li>Groups objects by shape, color, size and texture</li>
-            <li>Understands time of day concepts</li>
+            <li>Demonstrates sense of time</li>
             <li>Participates in simple experiments</li>
-            <li>Understands temperature and weight concepts</li>
-            <li>Identifies objects in the environment</li>
-            <li>Prints numerals 0–10</li>
+            <li>Understands temperature concepts</li>
+            <li>Understands weight concepts</li>
+            <li>Identifies objects in environment</li>
+            <li>Print numerals 0 to 10</li>
           </ul>
         </div>
 
         <div class="age-group">
           <h4>Music and Art Skills</h4>
           <ul class="goals">
-            <li>Participates in musical activities</li>
+            <li>Participate in musical activities</li>
             <li>Repeats rhythmic patterns</li>
             <li>Participates in and enjoys art activities</li>
             <li>Uses materials appropriately and cleans up</li>
@@ -340,8 +371,8 @@
       </div>
       <div class="footer-section">
         <h4>Contact Us</h4>
-        <p>Phone: [Phone Number]</p>
-        <p>Email: [Email Address]</p>
+        <p>Phone: (859) 586-2287</p>
+        <p>Email: director@crossroadshbc.org</p>
       </div>
     </div>
     <div class="footer-bottom">
