@@ -112,19 +112,114 @@ section {
   padding: 0 1rem;
 }
 
-footer {
-  background-color: #008caa;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+/* ===== Sleek Footer ===== */
+.site-footer {
+  background: linear-gradient(135deg, #0f6e7c, #0b5b66);
+  color: #f8fafc;
+  margin-top: 3rem;
 }
 
-footer a {
-  color: white;
+.site-footer .bar {
+  height: 4px;
+  background: linear-gradient(90deg, #12c2e9, #17a2b8, #0ea5a6);
+}
+
+.site-footer .footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer-column h4 {
+  font-size: 1.05rem;
+  letter-spacing: .02em;
+  margin: 0 0 .75rem;
+  color: #a7f3d0;
+}
+
+.footer-text {
+  opacity: .95;
+  margin: .25rem 0;
+  line-height: 1.5;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li + li { margin-top: .5rem; }
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: #ffffff;
+  text-decoration: none;
+  padding: .25rem 0;
+  border-radius: 6px;
+  transition: transform .15s, box-shadow .15s, color .15s;
+}
+
+.footer-link::before {
+  content: "›";
+  font-weight: 700;
+  opacity: .9;
+  translate: 0 -1px;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #d1fae5;
+  transform: translateX(2px);
+  box-shadow: 0 0 0 3px rgba(23,162,184,.25);
+  outline: none;
+}
+
+.footer-contact a {
+  color: #ffffff;
   text-decoration: none;
 }
 
-footer a:hover {
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
+  color: #d1fae5;
   text-decoration: underline;
+  outline: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.18);
+  text-align: center;
+  padding: 1rem 1.25rem 2rem;
+  color: #e5f4f6;
+  font-size: .95rem;
+}
+
+/* Adjust column layout for better alignment */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.2rem;
+}
+
+.footer-links-col {
+  margin-left: 2rem; /* Slight offset to left */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .site-footer .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-links-col {
+    margin-left: 0;
+  }
 }
