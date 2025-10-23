@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css"/>
 
   <style>
-    /* --- Page-only styles for hero, cards, and Quick Links tile --- */
+    /* --- Page-only styles for hero, cards, mission, and Quick Links tile --- */
 
     .hero {
       background: linear-gradient(rgba(23,162,184,.85), rgba(19,132,150,.85)),
@@ -56,6 +56,33 @@
       justify-self: center;
     }
 
+    /* Mission section */
+    .mission {
+      background:#17a2b8;
+      color:#fff;
+      text-align:center;
+      padding:4rem 2rem;
+      border-radius:0;
+    }
+    .mission h2 {
+      font-size:2.25rem;
+      margin-bottom:1rem;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    .mission p {
+      font-size:1.25rem;
+      max-width:700px;
+      margin:0.5rem auto;
+      line-height:1.6;
+    }
+    .mission strong {
+      display:block;
+      font-size:1.5rem;
+      margin-bottom:.75rem;
+      color:#fff;
+    }
+
     /* Quick Links in-page tile */
     .quick-links { background:#f8f9fa; padding: 3rem 0; }
     .quick-links .ql-card {
@@ -83,12 +110,11 @@
     }
   </style>
 
-  <!-- Defer script so the DOM exists before JS runs -->
   <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- Site Header / Nav (style + JS shared across pages) -->
+  <!-- Site Header / Nav -->
   <header>
     <div class="header-content">
       <div class="logo-section">
@@ -159,7 +185,14 @@
     </div>
   </section>
 
-  <!-- Quick Links tile (in-page) -->
+  <!-- Mission Section -->
+  <section class="mission">
+    <h2>Our Mission</h2>
+    <strong>Children First</strong>
+    <p>Nurturing a spiritual, educational, and social foundation for your preschooler.</p>
+  </section>
+
+  <!-- Quick Links -->
   <section class="quick-links">
     <div class="ql-card">
       <h2>Quick Links</h2>
@@ -185,14 +218,12 @@
   <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="bar" aria-hidden="true"></div>
-
     <div class="footer-inner">
       <div class="footer-column footer-info">
         <h4>CrossRoads Preschool</h4>
         <p class="footer-text">Located at Hebron Baptist Church</p>
         <p class="footer-text">3435 Limaburg Rd<br>Hebron, KY 41048</p>
       </div>
-
       <div class="footer-column footer-links-col">
         <h4>Quick Links</h4>
         <ul class="footer-links">
@@ -202,14 +233,12 @@
           <li><a class="footer-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-column footer-contact">
         <h4>Contact Us</h4>
         <p class="footer-text">Phone: <a href="tel:+18595862287">(859) 586-2287</a></p>
         <p class="footer-text">Email: <a href="mailto:director@crossroadshbc.org">director@crossroadshbc.org</a></p>
       </div>
     </div>
-
     <div class="footer-bottom">
       © 2025 CrossRoads Preschool. All rights reserved. | Guiding children at the crossroads of faith and learning.
     </div>
