@@ -76,6 +76,44 @@
       .curriculum-flex { flex-direction:column; align-items:center; }
       .curriculum-flex img, .curriculum-text { width:100%; }
     }
+    /* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: .5rem;
+  border-radius: 8px;
+}
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+  .header-content { flex-wrap: wrap; }
+  .menu-toggle { display: block; }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: .75rem;
+    width: 100%;
+    margin-top: .75rem;
+    padding: 1rem 0;
+    text-align: center;
+    background: linear-gradient(135deg,#17a2b8 0%,#138496 100%);
+    border-top: 1px solid rgba(255,255,255,.25);
+    box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  }
+  #nav-menu.show { display: flex; }
+  #nav-menu a { padding: .5rem 0; }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  #nav-menu { display: flex; gap: 2rem; }
+  .menu-toggle { display: none; }
+}
+
   </style>
 </head>
 <body>
@@ -373,15 +411,18 @@
         <p>Hebron, KY</p>
       </div>
       <div class="footer-section">
-        <h4>Quick Links</h4>
-        <p><a href="index.html" style="color:#17a2b8; text-decoration:none;">Home</a></p>
-        <p><a href="curriculum.html" style="color:#17a2b8; text-decoration:none;">Curriculum</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>Contact Us</h4>
-        <p>Phone: (859) 586-2287</p>
-        <p>Email: director@crossroadshbc.org</p>
-      </div>
+     <div class="footer-section">
+  <h4>Quick Links</h4>
+  <p><a href="index.html" style="color:#17a2b8; text-decoration:none;">Home</a></p>
+  <p><a href="curriculum.html" style="color:#17a2b8; text-decoration:none;">Curriculum</a></p>
+  <p><a href="parents.html" style="color:#17a2b8; text-decoration:none;">Parents</a></p>
+  <p><a href="contact.html" style="color:#17a2b8; text-decoration:none;">Contact</a></p>
+</div>
+<div class="footer-section">
+  <h4>Contact Us</h4>
+  <p>Phone: <a href="tel:+18595862287" style="color:#17a2b8; text-decoration:none;">(859) 586-2287</a></p>
+  <p>Email: <a href="mailto:director@crossroadshbc.org" style="color:#17a2b8; text-decoration:none;">director@crossroadshbc.org</a></p>
+</div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 CrossRoads Preschool. All rights reserved. | Guiding children at the crossroads of faith and learning.</p>
