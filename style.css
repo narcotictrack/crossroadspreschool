@@ -43,18 +43,19 @@ header {
   font-size: 0.9rem;
 }
 
-nav {
+/* Navigation */
+#nav-menu {
   display: flex;
   gap: 1.5rem;
 }
 
-nav a {
+#nav-menu a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
-nav a:hover {
+#nav-menu a:hover {
   text-decoration: underline;
 }
 
@@ -65,6 +66,7 @@ nav a:hover {
   border: none;
   color: white;
   cursor: pointer;
+  z-index: 3;
 }
 
 .menu-toggle svg {
@@ -79,10 +81,10 @@ nav a:hover {
   }
 
   .menu-toggle {
-    display: block;
+    display: block !important;
   }
 
-  nav {
+  #nav-menu {
     display: none;
     flex-direction: column;
     width: 100%;
@@ -90,13 +92,14 @@ nav a:hover {
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: #008caa;
   }
 
-  nav.show {
+  #nav-menu.show {
     display: flex;
   }
 
-  nav a {
+  #nav-menu a {
     display: block;
     padding: 0.5rem 0;
   }
