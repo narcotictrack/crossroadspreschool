@@ -4,263 +4,124 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CrossRoads Preschool - Hebron, KY</title>
+
+  <!-- If you are using a shared stylesheet, keep this line.
+       If not, you can remove it. -->
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
-      line-height: 1.6;
+      color:#333; line-height:1.6;
     }
 
     header {
       background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
-      color: white;
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      color:#fff; padding:1rem 0;
+      box-shadow:0 2px 10px rgba(0,0,0,.1);
     }
 
     .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      max-width:1200px; margin:0 auto; padding:0 2rem;
+      display:flex; justify-content:space-between; align-items:center;
     }
 
-    .logo-section {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    .logo-section { display:flex; align-items:center; gap:1rem; }
 
     .logo-circle {
-      width: 80px;
-      height: 80px;
-      background: white;
-      border-radius: 50%;
-      padding: 5px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width:80px; height:80px; background:#fff; border-radius:50%;
+      padding:5px; box-shadow:0 4px 6px rgba(0,0,0,.1);
     }
+    .logo-circle img { width:100%; height:100%; object-fit:contain; }
 
-    .logo-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+    .school-info h1 { font-size:2rem; margin-bottom:.25rem; }
+    .school-info p { font-size:1rem; opacity:.95; }
 
-    .school-info h1 {
-      font-size: 2rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .school-info p {
-      font-size: 1rem;
-      opacity: 0.95;
-    }
-
-    nav {
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.3s;
-    }
-
-    nav a:hover {
-      opacity: 0.8;
-    }
+    nav { display:flex; gap:2rem; }
+    nav a { color:#fff; text-decoration:none; font-weight:500; transition:opacity .3s; }
+    nav a:hover { opacity:.8; }
 
     .hero {
-      background: linear-gradient(rgba(23, 162, 184, 0.85), rgba(19, 132, 150, 0.85)),
-                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2387CEEB" width="1200" height="600"/><path fill="%2390EE90" d="M0 400 Q 300 350 600 400 T 1200 400 L 1200 600 L 0 600 Z"/><path fill="%2376C776" d="M0 450 Q 300 420 600 450 T 1200 450 L 1200 600 L 0 600 Z"/></svg>');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 6rem 2rem;
-      text-align: center;
+      background: linear-gradient(rgba(23,162,184,.85), rgba(19,132,150,.85)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2387CEEB" width="1200" height="600"/><path fill="%2390EE90" d="M0 400 Q 300 350 600 400 T 1200 400 L 1200 600 L 0 600 Z"/><path fill="%2376C776" d="M0 450 Q 300 420 600 450 T 1200 450 L 1200 600 L 0 600 Z"/></svg>');
+      background-size:cover; background-position:center; color:#fff; padding:6rem 2rem; text-align:center;
     }
+    .hero-content { max-width:800px; margin:0 auto; }
+    .hero h2 { font-size:2.5rem; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,.3); }
+    .hero p { font-size:1.25rem; margin-bottom:2rem; text-shadow:1px 1px 2px rgba(0,0,0,.3); }
 
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+    .cta-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn { padding:.875rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; transition:all .3s; display:inline-block; box-shadow:0 4px 6px rgba(0,0,0,.2); }
+    .btn-primary { background:#fff; color:#17a2b8; }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 6px 12px rgba(0,0,0,.3); }
+    .btn-secondary { background:transparent; color:#fff; border:2px solid #fff; }
+    .btn-secondary:hover { background:#fff; color:#17a2b8; }
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 0.875rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-      display: inline-block;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    }
-
-    .btn-primary {
-      background: white;
-      color: #17a2b8;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid white;
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      color: #17a2b8;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .section-header h2 {
-      font-size: 2.25rem;
-      color: #17a2b8;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-header p {
-      font-size: 1.1rem;
-      color: #666;
-    }
+    .container { max-width:1200px; margin:0 auto; padding:4rem 2rem; }
+    .section-header { text-align:center; margin-bottom:3rem; }
+    .section-header h2 { font-size:2.25rem; color:#17a2b8; margin-bottom:.5rem; }
+    .section-header p { font-size:1.1rem; color:#666; }
 
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:2rem; margin-bottom:4rem;
     }
-
     .feature-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
+      background:#fff; padding:2rem; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,.1);
+      text-align:center; transition:transform .3s;
     }
+    .feature-card:hover { transform:translateY(-5px); }
+    .feature-icon { font-size:3rem; margin-bottom:1rem; }
+    .feature-card h3 { color:#17a2b8; margin-bottom:.75rem; }
 
-    .feature-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .feature-card h3 {
-      color: #17a2b8;
-      margin-bottom: 0.75rem;
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      padding: 3rem 2rem 1.5rem;
-    }
-
+    footer { background:#333; color:#fff; padding:3rem 2rem 1.5rem; }
     .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
+      max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:2rem; margin-bottom:2rem;
     }
+    .footer-section h4 { color:#17a2b8; margin-bottom:1rem; }
+    .footer-bottom { text-align:center; padding-top:2rem; border-top:1px solid #555; color:#999; }
 
-    .footer-section h4 {
-      color: #17a2b8;
-      margin-bottom: 1rem;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid #555;
-      color: #999;
-    }
-
-    /* Hamburger menu styles */
+    /* Hamburger menu button */
     .menu-toggle {
-      display: none;
-      background: transparent;
-      border: 0;
-      color: #fff;
-      cursor: pointer;
-      padding: .5rem;
-      border-radius: 8px;
+      display:none; background:transparent; border:0; color:#fff; cursor:pointer; padding:.5rem; border-radius:8px;
     }
+    /* size the icon */
+    .menu-toggle svg { width:28px; height:28px; }
 
+    /* Mobile behavior */
     @media (max-width: 768px) {
-      .header-content { flex-wrap: wrap; }
-      .menu-toggle { display: block; z-index: 2; }
+      .header-content { flex-wrap:wrap; }
+      .menu-toggle { display:block; z-index:2; }
 
       #nav-menu {
-        display: none;
-        flex-direction: column;
-        gap: .75rem;
-        width: 100%;
-        margin-top: .75rem;
-        padding: 1rem 0;
-        text-align: center;
+        display:none;
+        flex-direction:column;
+        gap:.75rem; width:100%; margin-top:.75rem; padding:1rem 0; text-align:center;
         background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
-        border-top: 1px solid rgba(255,255,255,.25);
-        box-shadow: 0 6px 16px rgba(0,0,0,.15);
+        border-top:1px solid rgba(255,255,255,.25); box-shadow:0 6px 16px rgba(0,0,0,.15);
       }
-
-      #nav-menu.show { display: flex; }
-      #nav-menu a { padding: .5rem 0; }
+      #nav-menu.show { display:flex; }
+      #nav-menu a { padding:.5rem 0; }
     }
 
     @media (min-width: 769px) {
-      #nav-menu { display: flex; gap: 2rem; }
-      .menu-toggle { display: none; }
+      #nav-menu { display:flex; gap:2rem; }
+      .menu-toggle { display:none; }
+    }
+
+    /* Final safety in case any external CSS overrides things */
+    @media (max-width:768px){
+      .menu-toggle { display:block !important; }
+      #nav-menu.show { display:flex !important; }
     }
   </style>
+
+  <!-- Load JS after parsing to ensure elements exist -->
+  <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -276,19 +137,19 @@
         </div>
       </div>
 
-     <button class="menu-toggle" aria-label="Toggle menu" aria-controls="nav-menu" aria-expanded="false">
-  <span class="hamburger-lines"><span></span><span></span><span></span></span>
-</button>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-controls="nav-menu" aria-expanded="false">
+        <!-- explicit width/height added -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
 
-<div class="menu-overlay" id="menu-overlay"></div>
-
-<nav id="nav-menu">
-  <a href="index.html">Home</a>
-  <a href="curriculum.html">Curriculum</a>
-  <a href="parents.html">Parents</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
+      <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="parents.html">Parents</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -342,9 +203,9 @@
       </div>
       <div class="footer-section">
         <h4>Quick Links</h4>
-        <p><a href="https://www.crossroadshbc.org/_files/ugd/b87025_c750565ea02a44dda9e8f63490d55011.pdf" target="_blank" rel="noopener" style="color: #17a2b8; text-decoration: none;">2025-26 Registration Form</a></p>
-        <p><a href="https://www.crossroadshbc.org/_files/ugd/b87025_48999d64465e49f39ad15087094d1e93.pdf" target="_blank" rel="noopener" style="color: #17a2b8; text-decoration: none;">Authorized Pickup Form</a></p>
-        <p><a href="https://www.crossroadshbc.org/_files/ugd/b87025_1b398e26814d4b43ad79a3980d938076.pdf" target="_blank" rel="noopener" style="color: #17a2b8; text-decoration: none;">Emergency/Photo Release Form</a></p>
+        <p><a href="https://www.crossroadshbc.org/_files/ugd/b87025_c750565ea02a44dda9e8f63490d55011.pdf" target="_blank" rel="noopener" style="color:#17a2b8; text-decoration:none;">2025-26 Registration Form</a></p>
+        <p><a href="https://www.crossroadshbc.org/_files/ugd/b87025_48999d64465e49f39ad15087094d1e93.pdf" target="_blank" rel="noopener" style="color:#17a2b8; text-decoration:none;">Authorized Pickup Form</a></p>
+        <p><a href="https://www.crossroadshbc.org/_files/ugd/b87025_1b398e26814d4b43ad79a3980d938076.pdf" target="_blank" rel="noopener" style="color:#17a2b8; text-decoration:none;">Emergency/Photo Release Form</a></p>
       </div>
       <div class="footer-section">
         <h4>Contact Us</h4>
@@ -358,6 +219,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- script loads deferred in <head> -->
 </body>
 </html>
