@@ -345,6 +345,49 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Hamburger button base */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: .5rem;
+  border-radius: 8px;
+}
+
+/* Mobile nav behavior */
+@media (max-width: 768px) {
+  .header-content { flex-wrap: wrap; }
+
+  .menu-toggle { display: block; }
+
+  /* collapse by default */
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: .75rem;
+    width: 100%;
+    margin-top: .75rem;
+    padding: 1rem 0;
+    text-align: center;
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    border-top: 1px solid rgba(255,255,255,.25);
+    box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  }
+
+  /* show when toggled */
+  #nav-menu.show { display: flex; }
+
+  #nav-menu a { padding: .5rem 0; }
+}
+
+/* Desktop keeps inline nav */
+@media (min-width: 769px) {
+  #nav-menu { display: flex; gap: 2rem; }
+  .menu-toggle { display: none; }
+}
+
     </style>
 </head>
 <body>
@@ -382,7 +425,7 @@
             <p>A Christ-centered learning environment for children ages 3 & 4 at Hebron Baptist Church</p>
             <div class="cta-buttons">
                 <a href="https://www.crossroadshbc.org/_files/ugd/b87025_c750565ea02a44dda9e8f63490d55011.pdf" target="_blank" class="btn btn-primary">Register for 2025-26</a>
-                <a href="#contact" class="btn btn-secondary">Schedule a Visit</a>
+                <a href="contact.html" class="btn btn-secondary">Schedule a Visit</a>
             </div>
         </div>
     </section>
@@ -503,8 +546,9 @@
             </div>
             <div class="footer-section">
                 <h4>Contact Us</h4>
-                <p>Phone: (859) 586-2287</p>
-                <p>Email: director@crossroadshbc.org</p>
+               <p>Phone: <a href="tel:+18595862287" style="color:#17a2b8; text-decoration:none;">(859) 586-2287</a></p>
+                <p>Email: <a href="mailto:director@crossroadshbc.org" style="color:#17a2b8; text-decoration:none;">director@crossroadshbc.org</a></p>
+
             </div>
         </div>
         <div class="footer-bottom">
