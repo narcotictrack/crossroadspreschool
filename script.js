@@ -1,19 +1,26 @@
+// script.js
 (function () {
   const btn = document.querySelector('.menu-toggle');
   const menu = document.getElementById('nav-menu');
   if (!btn || !menu) return;
 
-  function toggleMenu(force) {
-    const willShow = typeof force === 'boolean' ? force : !menu.classList.contains('show');
-    menu.classList.toggle('show', willShow);
-    btn.setAttribute('aria-expanded', String(willShow));
+  function setExpanded(show) {
+    menu.classList.toggle('show', show);
+    btn.setAttribute('aria-expanded', String(show));
   }
 
-  btn.addEventListener('click', () => toggleMenu());
-  menu.addEventListener('click', e => {
-    if (e.target.tagName === 'A') toggleMenu(false);
+  // Toggle on button click
+  btn.addEventListener('click', () => {
+    setExpanded(!menu.classList.contains('show'));
   });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') toggleMenu(false);
+
+  // Close after tapping a link
+  menu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') setExpanded(false);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setExpanded(false);
   });
 })();
