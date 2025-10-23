@@ -355,4 +355,29 @@ section {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+  /* ===== Global Link Styling ===== */
+a {
+  color: #008caa;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus-visible {
+  color: #006d85;
+  text-decoration: none;
+}
+
+/* Keep white links in header and footer */
+header a,
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header a:hover,
+.site-footer a:hover {
+  color: #d1fae5;
+  text-decoration: underline;
+}
+
 }
