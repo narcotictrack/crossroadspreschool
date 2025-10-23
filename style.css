@@ -379,5 +379,42 @@ header a:hover,
   color: #d1fae5;
   text-decoration: underline;
 }
+/* Make in-page links use the theme blue */
+main a {
+  color: #008caa;
+  text-decoration: underline;
+}
+main a:hover,
+main a:focus-visible {
+  color: #006d85;
+  text-decoration: none;
+}
+
+/* You're reusing .footer-link inside the contact card.
+   Force those (and any links there) to be blue. */
+.contact-side-card a,
+.contact-side-card .footer-link {
+  color: #008caa !important;
+  text-decoration: underline;
+}
+.contact-side-card .footer-link:hover,
+.contact-side-card a:hover {
+  color: #006d85 !important;
+  text-decoration: none;
+}
+
+/* Keep header and *footer* links white for contrast */
+header a,
+.site-footer a,
+.site-footer .footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+header a:hover,
+.site-footer a:hover,
+.site-footer .footer-link:hover {
+  color: #d1fae5;
+  text-decoration: underline;
+}
 
 }
