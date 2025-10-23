@@ -9,33 +9,18 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 
-  <!-- PAGE-SPECIFIC STYLES ONLY (no header/nav/hamburger CSS here) -->
+  <!-- Page-specific (hero only) -->
   <style>
     .hero{
-      background:linear-gradient(rgba(23,162,184,.85), rgba(19,132,150,.85)),
-      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2387CEEB" width="1200" height="600"/><path fill="%2390EE90" d="M0 400 Q 300 350 600 400 T 1200 400 L 1200 600 L 0 600 Z"/><path fill="%2376C776" d="M0 450 Q 300 420 600 450 T 1200 450 L 1200 600 L 0 600 Z"/></svg>');
-      background-size:cover;background-position:center;color:#fff;padding:4rem 2rem;text-align:center;
+      background:
+        linear-gradient(rgba(23,162,184,.85), rgba(19,132,150,.85)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2387CEEB" width="1200" height="600"/><path fill="%2390EE90" d="M0 400 Q 300 350 600 400 T 1200 400 L 1200 600 L 0 600 Z"/><path fill="%2376C776" d="M0 450 Q 300 420 600 450 T 1200 450 L 1200 600 L 0 600 Z"/></svg>');
+      background-size:cover; background-position:center;
+      color:#fff; text-align:center; padding:4rem 2rem;
     }
-    .hero-content{max-width:800px;margin:0 auto}
-    .hero h2{font-size:2.25rem;margin-bottom:.75rem;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
-    .hero p{font-size:1.15rem;text-shadow:1px 1px 2px rgba(0,0,0,.3)}
-
-    .container{max-width:1200px;margin:0 auto;padding:4rem 2rem}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
-    .card{background:#fff;padding:2rem;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-    .card h3{color:#17a2b8;font-size:1.5rem;margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:3px solid #17a2b8}
-    .muted{color:#555}
-
-    form{display:grid;gap:1rem}
-    label{font-weight:600}
-    input,textarea,select{width:100%;padding:.75rem 1rem;border:1px solid #e5e7eb;border-radius:10px;font:inherit}
-    textarea{min-height:140px;resize:vertical}
-    .btn{display:inline-block;padding:.85rem 1.25rem;border-radius:50px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;background:#17a2b8;color:#fff;box-shadow:0 6px 14px rgba(0,0,0,.12)}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 18px rgba(0,0,0,.16)}
-
-    .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
-    .links a{display:block;padding:.75rem 1rem;border-radius:10px;text-decoration:none;background:#f8f9fa;color:#138496;border:1px solid #e9ecef}
-    .links a:hover{background:#fff;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+    .hero-content{max-width:800px; margin:0 auto;}
+    .hero h2{font-size:2.25rem; margin-bottom:.75rem; text-shadow:2px 2px 4px rgba(0,0,0,.3);}
+    .hero p{font-size:1.15rem; text-shadow:1px 1px 2px rgba(0,0,0,.3);}
   </style>
 </head>
 <body>
@@ -53,7 +38,6 @@
     </div>
 
     <button class="menu-toggle" aria-label="Toggle menu" aria-controls="nav-menu" aria-expanded="false">
-      <!-- explicit size so it always shows -->
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
@@ -63,7 +47,7 @@
       <a href="index.html">Home</a>
       <a href="curriculum.html">Curriculum</a>
       <a href="parents.html">Parents</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" aria-current="page">Contact</a>
     </nav>
   </div>
 </header>
@@ -75,62 +59,65 @@
   </div>
 </section>
 
-<main class="container">
-  <div class="grid">
-    <!-- Contact info -->
-    <section class="card">
-      <h3>Reach Us</h3>
-      <p class="muted">Phone</p>
-      <p><a href="tel:+18595862287">(859) 586-2287</a></p>
-      <p class="muted" style="margin-top:.75rem;">Email</p>
-      <p><a href="mailto:director@crossroadshbc.org">director@crossroadshbc.org</a></p>
-      <p class="muted" style="margin-top:.75rem;">Location</p>
-      <p>Hebron Baptist Church, Hebron, KY</p>
-      <div style="margin-top:1rem;">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hebron+Baptist+Church+Hebron+KY" target="_blank" rel="noopener">Open in Google Maps</a>
-      </div>
-    </section>
+<!-- Main content -->
+<main>
+  <div class="contact-grid">
+    <!-- BIG contact form -->
+    <section class="contact-form-container" aria-labelledby="contact-form-title">
+      <h2 id="contact-form-title">Send a Message</h2>
 
-    <!-- Contact form -->
-    <section class="card">
-      <h3>Send a Message</h3>
-      <!-- Replace with a form service (Formspree/Getform) when ready -->
-      <form action="mailto:director@crossroadshbc.org" method="post" enctype="text/plain">
+      <!-- Replace mailto with Formspree/Getform later -->
+      <form class="contact-form" action="mailto:director@crossroadshbc.org" method="post" enctype="text/plain">
         <label for="name">Your Name</label>
-        <input id="name" name="name" type="text" required />
+        <input id="name" name="name" type="text" required>
 
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+        <input id="email" name="email" type="email" required>
 
         <label for="phone">Phone (optional)</label>
-        <input id="phone" name="phone" type="tel" />
+        <input id="phone" name="phone" type="tel">
 
         <label for="subject">Subject</label>
-        <input id="subject" name="subject" type="text" required />
+        <input id="subject" name="subject" type="text" required>
 
         <label for="message">Message</label>
         <textarea id="message" name="message" required></textarea>
 
-        <button class="btn" type="submit">Send</button>
+        <button type="submit">Send</button>
       </form>
     </section>
 
-    <!-- Quick links -->
-    <section class="card">
+    <!-- Right column: Reach Us + Quick Links -->
+    <aside class="contact-side-card">
+      <h3>Reach Us</h3>
+      <p><strong>Phone</strong></p>
+      <p><a href="tel:+18595862287">(859) 586-2287</a></p>
+
+      <p style="margin-top:.75rem;"><strong>Email</strong></p>
+      <p><a href="mailto:director@crossroadshbc.org">director@crossroadshbc.org</a></p>
+
+      <p style="margin-top:.75rem;"><strong>Location</strong></p>
+      <p>Hebron Baptist Church<br>3435 Limaburg Rd, Hebron, KY 41048</p>
+
+      <p style="margin-top:1rem;">
+        <a class="footer-link" href="https://www.google.com/maps/search/?api=1&query=Hebron+Baptist+Church+Hebron+KY" target="_blank" rel="noopener">Open in Google Maps</a>
+      </p>
+
+      <hr style="margin:1.25rem 0; border:0; height:1px; background:#e6eef1;">
+
       <h3>Quick Links</h3>
-      <div class="links">
-        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_c750565ea02a44dda9e8f63490d55011.pdf" target="_blank" rel="noopener">2025-26 Registration Form</a>
-        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_48999d64465e49f39ad15087094d1e93.pdf" target="_blank" rel="noopener">Pickup Authorization Form</a>
-        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_1b398e26814d4b43ad79a3980d938076.pdf" target="_blank" rel="noopener">Emergency & Photo Release</a>
-        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_1e6c9b494786403b978aa8525363dee9.pdf" target="_blank" rel="noopener">School Calendar 2025-26</a>
-        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_a670b3d708d24f09a384299dceb89f50.pdf" target="_blank" rel="noopener">Most Recent Newsletter</a>
-        <a href="https://www.crossroadshbc.org/_files/ugd/b87025_c02f7434d20347808689ee262be326f1.pdf" target="_blank" rel="noopener">2025-26 Snack Menu</a>
-      </div>
-    </section>
+      <ul class="footer-links" style="margin-top:.5rem;">
+        <li><a class="footer-link" href="https://www.crossroadshbc.org/_files/ugd/b87025_c750565ea02a44dda9e8f63490d55011.pdf" target="_blank" rel="noopener">2025–26 Registration Form</a></li>
+        <li><a class="footer-link" href="https://www.crossroadshbc.org/_files/ugd/b87025_48999d64465e49f39ad15087094d1e93.pdf" target="_blank" rel="noopener">Pickup Authorization Form</a></li>
+        <li><a class="footer-link" href="https://www.crossroadshbc.org/_files/ugd/b87025_1b398e26814d4b43ad79a3980d938076.pdf" target="_blank" rel="noopener">Emergency & Photo Release</a></li>
+        <li><a class="footer-link" href="https://www.crossroadshbc.org/_files/ugd/b87025_1e6c9b494786403b978aa8525363dee9.pdf" target="_blank" rel="noopener">School Calendar 2025–26</a></li>
+        <li><a class="footer-link" href="https://www.crossroadshbc.org/_files/ugd/b87025_a670b3d708d24f09a384299dceb89f50.pdf" target="_blank" rel="noopener">Most Recent Newsletter</a></li>
+        <li><a class="footer-link" href="https://www.crossroadshbc.org/_files/ugd/b87025_c02f7434d20347808689ee262be326f1.pdf" target="_blank" rel="noopener">2025–26 Snack Menu</a></li>
+      </ul>
+    </aside>
   </div>
 </main>
 
-  </footer>
 <footer class="site-footer" role="contentinfo">
   <div class="bar" aria-hidden="true"></div>
 
@@ -147,7 +134,7 @@
         <li><a class="footer-link" href="index.html">Home</a></li>
         <li><a class="footer-link" href="curriculum.html">Curriculum</a></li>
         <li><a class="footer-link" href="parents.html">Parents</a></li>
-        <li><a class="footer-link" href="contact.html">Contact</a></li>
+        <li><a class="footer-link" href="contact.html" aria-current="page">Contact</a></li>
       </ul>
     </div>
 
@@ -162,7 +149,6 @@
     © 2025 CrossRoads Preschool. All rights reserved. | Guiding children at the crossroads of faith and learning.
   </div>
 </footer>
-
 
 </body>
 </html>
